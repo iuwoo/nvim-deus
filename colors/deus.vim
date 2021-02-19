@@ -16,6 +16,7 @@ lua << EOF
 	You will not need any additional tooling to run this file. Just open it in Neovim and follow the instructions.
 
 	The process is divided in five steps:
+
 	1. Rename the template,
 	2. Edit your colorscheme's information,
 	3. Define your colors,
@@ -68,6 +69,7 @@ vim.g.colors_name = 'deus'
 ```lua
 	<color name> = { -- Give each color a distinctive name.
 		'#<hex color code>', -- Hexadecimal color used in GVim/MacVim or 'NONE'.
+		
 		<16-bit color code>, -- Integer 0–255 used by terminals supporting 256 colors or 'NONE'.
 		'<ANSI color name>'  -- color name used by less capable color terminals, can be 'darkred',
 		                       'red', 'darkgreen', 'green', 'darkyellow', 'yellow', 'darkblue',
@@ -135,6 +137,8 @@ local purple_light = {'#A8D5E2', 63,  'magenta'}
 local magenta_light1 = {'#BD93BD', 63,  'magenta'}
 local magenta_light2 = {'#A7A2A9', 63,  'magenta'}
 local navyblue = {'#6699CC', 63,  'blue'}
+
+local c = {'#26C6DA '}
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -736,13 +740,19 @@ local highlight_groups = {
 
 	-- >>> coc-explorer <<<
 	-- >> git
-	CocExplorerGitModified = {fg=cyan},
+	CocExplorerGitModified = {fg=red, style=bold},
 
 	-- >> buffer
 	CocExplorerBufferRoot = {fg=pink_light},
+	CocExplorerBufferBufnr = {fg=orange_light},
+	CocExplorerBufferExpandIcon = {fg=pink},
 
 	-- >> 
 	CocExplorerFileRoot = {fg=pink_light},
+	CocExplorerFileExpandIcon = {fg=c},
+	CocExplorerFileDirectory = {fg=c},
+	CocExplorerFileDirectoryExpanded = {fg=c},
+	CocExplorerFileDirectoryCollapsed = {fg=c},
 }
 
 --[[ Step 5: Terminal Colors
