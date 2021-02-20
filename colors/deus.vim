@@ -138,7 +138,9 @@ local magenta_light1 = {'#BD93BD', 63,  'magenta'}
 local magenta_light2 = {'#A7A2A9', 63,  'magenta'}
 local navyblue = {'#6699CC', 63,  'blue'}
 
-local c = {'#26C6DA '}
+local blue_light = {'#26C6DA'}
+
+local blue_light_v1 = {'#A7FFEB'}
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -741,18 +743,22 @@ local highlight_groups = {
 	-- >>> coc-explorer <<<
 	-- >> git
 	CocExplorerGitModified = {fg=red, style=bold},
+	CocExplorerGitUntracked = {fg=blue_light_v1},
 
 	-- >> buffer
 	CocExplorerBufferRoot = {fg=pink_light},
-	CocExplorerBufferBufnr = {fg=orange_light},
 	CocExplorerBufferExpandIcon = {fg=pink},
 
-	-- >> 
+	CocExplorerBufferBufnr = {fg=orange_light},
+
+	-- >> file
 	CocExplorerFileRoot = {fg=pink_light},
-	CocExplorerFileExpandIcon = {fg=c},
-	CocExplorerFileDirectory = {fg=c},
-	CocExplorerFileDirectoryExpanded = {fg=c},
-	CocExplorerFileDirectoryCollapsed = {fg=c},
+	CocExplorerFileExpandIcon = {fg=pink_light},
+
+	CocExplorerFileDirectory = {fg=blue_light},
+	CocExplorerFileDirectoryExpanded = {fg=blue_light},
+	CocExplorerFileDirectoryCollapsed = {fg=blue_light},
+
 }
 
 --[[ Step 5: Terminal Colors
